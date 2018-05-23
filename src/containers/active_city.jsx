@@ -3,15 +3,17 @@ import { connect } from 'react-redux';
 
 const ActiveCity = (props) => {
   if (!props.activeCity.name) {
-    let name = 'Paris';
-    let address = '16 Villa Gaudelet, 75011 Paris';
-    let slug = 'Paris';
+    return (
+      <div className="active-city">
+        <p>Select a city...</p>
+      </div>
+    );
   }
   console.log(props.activeCity);
 
-  let name = props.activeCity.name;
-  let address = props.activeCity.address;
-  let slug = props.activeCity.slug;
+  const name = props.activeCity.name;
+  const address = props.activeCity.address;
+  const slug = props.activeCity.slug;
 
   const url = `https://kitt.lewagon.com/placeholder/cities/${slug}`;
 
